@@ -2,19 +2,19 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): Promise<any> {
-    let a, b; Number;
-    a=333
-    b=444 
-    const res = this.addTwoNumbers(a, b)
-    return res;
-  }  
-  public async addTwoNumbers(a: number,b : number): Promise<any>{
-    if(a == b){
-      return "Holoso";
+  getHello(): Person  {
+    const person = new Person ('Jesus Christ','Hallelujah');
+    return person;
+  }  }
+  export class Person {
+    lastNameEn: string;
+    firstNameEn: string;
+    middleNameEn: string;
+    birtDate: string;
+    constructor(firstNameEn,lastNameEn) {
+ this.firstNameEn = firstNameEn;
+ this.lastNameEn = lastNameEn;    
+    }
   }
-  else{
-        return "Ne Holoso";
-  }  
-  }
-}
+   
+  
